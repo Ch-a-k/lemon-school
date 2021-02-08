@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
 .clearfix:before, .clearfix:after {
     content: "";
     clear: both;
@@ -30,16 +35,20 @@ body {
     color: #000;
 }
 
-.container img {
-    float: left;
+.logo img {
     max-width: 150px;
-    margin-left: 5%;
+    margin: 15px 15px;
 }
 
-.container .form {
-    float: right;
-    margin-right: 15%;
-    margin-top: 5%;
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.logo a {
+    margin-right: 25%;
 }
 
 input {
@@ -132,8 +141,6 @@ main {
 }
 
 main h2 {
-    padding-top: 1%;
-    padding-bottom: 2%;
     text-align: left;
 }
 
@@ -143,22 +150,19 @@ main .condition {
     font-family: bold;
 }
 
-main .price {
-    text-align: center;
-    margin: 0;
+.condition {
+    margin-bottom: 20px;
 }
 
-.form {
-    float: left;
-    text-align: left;
-    padding: 0;
+main .price {
+    text-align: center;
     margin: 0;
 }
 
 .main-img {
     float: left;
     max-width: 30%;
-    margin: 15px;
+    margin: 0 15px;
     border: 1px solid gold;
 }
 
@@ -174,7 +178,8 @@ main .price {
 
 .main .submit {
     margin: 15px 0;
-    width: 210px;
+    width: 300px;
+    height: 30px;
 }
 
 main h3 {
@@ -207,9 +212,19 @@ main h3 {
     margin-left: 15px;
 }
 
-.guarantee img {
-    margin: 3%;
-    max-width: 20%;
+.guarantee {
+    display: flex;
+    flex-direction: row;
+}
+.imgwrapper {
+    width: 25%;
+    height: auto;
+    margin: 0 auto;
+}
+.imgwrapper img {
+    width: 100%;
+    height: auto;
+    margin: 40px 0
 }
 
 /* FOOTER */
@@ -252,6 +267,9 @@ h2 {
     background: gold;
     padding: 15px;
 }
+.inner-footer {
+    margin-top: 100px;
+}
 
 /* MEDIA */
 
@@ -259,8 +277,18 @@ h2 {
 
 @media (max-width: 480px) {
     main div h2 {
-        margin: 0;
+        margin: 0 0 15px 15px;
         padding: 0 0;
+        font-size: 13px;
+    }
+    main h3 {
+        font-size: 15px;
+    }
+    main .descr {
+        font-size: 13px;
+    }
+    .logo a {
+        margin: 0;
     }
     .main-img {
         box-sizing: content-box;
@@ -269,7 +297,7 @@ h2 {
     .navigation {
         padding: 0;
         text-align: center;
-        margin: 20px 0;
+        margin: 0 0 20px 0;
         font-size: 10px;
         position: relative;
     }
@@ -295,12 +323,24 @@ h2 {
         display: inline-flex;
         margin-bottom: 5px;
     }
-    .container .form input {
+    .container .mailform input {
         display: flex;
         justify-content: center;
         max-width: 120px;
         margin: 0;
         padding: 0;
+    }
+    .conditionwrapper img {
+        margin: 0 0;
+    }
+
+    .main input {
+        width: 52px;
+        margin: 0;
+    }
+    .main .condition {
+       margin: 15px 0 15px 15px;
+        font-size: 18px;
     }
     .brow {
         display: flex;
@@ -341,27 +381,39 @@ h2 {
     }
     #table {
         width: 90%;
+        font-size: 13px;
     }
-    form.form.clearfix {
-        float: none;
-        text-align: left;
-        margin-left: 15px;
-    }
-    .inner-footer {
-        margin: 0;
-        padding: 0;
-        font-size: 70%;
+    .row {
+        margin-bottom: 100px;
     }
     .inner-footer ul {
         margin: 10px;
     }
     .inner-footer img {
-        max-width: 15%;
+        max-width: 25%;
+    }
+    .main .submit {
+        margin: 0;
+    }
+    .row {
+        margin-bottom: 0;
+    }
+    .inner-footer {
+        margin-top: 0;
+    }
+    .inner-footer li {
+        font-size: 13px;
+    }
+    .brow a {
+        font-size: 13px;
+    }
+    footer p{
+        font-size: 13px;
     }
 }
 
 @media (min-width: 481px) and (max-width: 680px) {
-    .container .form input {
+    .container .mailform input {
         max-width: 110px;
         display: flex;
         justify-content: center;
@@ -369,6 +421,7 @@ h2 {
         margin: 0;
         padding: 0;
     }
+
     .navigation {
         padding: 0;
         text-align: center;
@@ -435,7 +488,8 @@ h2 {
     }
 }
 
-@media (min-width: 681px) {
+
+@media (min-width: 681px) and (max-width: 859px) {
     main .radio {
         display: inline-flex;
         justify-content: center;
@@ -445,8 +499,33 @@ h2 {
         max-width: 20px;
         margin: 5px 15px;
     }
-    .main p input {
-        max-width: 140px;
+    main h2 {
+        font-size: 18px;
+    }
+    .form {
+        float: left;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+    #categories {
+        font-size: 22px;
+    }
+    .row li {
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width: 860px) {
+    main .radio {
+        display: inline-flex;
+        justify-content: center;
+        max-width: 40%
+    }
+    input.radio {
+        max-width: 20px;
+        margin: 5px 15px;
     }
     .form {
         float: left;
