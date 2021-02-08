@@ -336,15 +336,6 @@ h2 {
         max-width: 100%;
         margin-bottom: 0;
     }
-    main .radio {
-        display: inline-flex;
-        justify-content: center;
-        max-width: 40%
-    }
-    input.radio {
-        max-width: 20px;
-        margin: 5px 15px;
-    }
     .main p input {
         max-width: 140px;
     }
